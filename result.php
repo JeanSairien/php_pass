@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +14,21 @@
 <body>
 <p>Connection: <?php  echo htmlspecialchars($_POST['ident']); ?></p>
 <?php
-	if(($_POST['pass'] == "kangourou") )
+	if (isset($_POST['pass']) AND ($_POST['pass'] == "serialcoder") )
 	{
 		echo "<p>VOus etes conneté !!!</p>";
 	}
 	else
 	{
-		echo "<p>erreur de mot de pass!!</p>";
+		echo "<p>ta geule cest pas le bon pass!!</p>";
 
 	}
 	?>
 	
-
+	<?php
+		echo $_SESSION['ident'];		
+		echo $_SESSION['pass'];
+	?>
 
 
 
